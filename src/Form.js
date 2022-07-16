@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik } from "formik";
 import { endpoints } from "./api/endpoints";
 import api from "./api";
@@ -20,6 +20,14 @@ export const Form = () => {
    }
   }
 
+  useEffect(() => {
+    console.log("I rendered");
+  
+    return () => {
+      
+    }
+  }, [])
+  
   
   return (
     <div>
