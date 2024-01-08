@@ -1,17 +1,17 @@
-import axios from "axios";
+import axios from 'axios';
 
 
 const BASE_URL =
-  "http://127.0.0.1:5002";
+  'http://127.0.0.1:5002';
 
 
 
 const api = axios.create({
-  baseURL: BASE_URL,
-  headers: {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-  },
+	baseURL: BASE_URL,
+	headers: {
+		'Content-Type': 'application/json',
+		'Access-Control-Allow-Origin': '*',
+	},
 });
 
 // api.interceptors.request.use(

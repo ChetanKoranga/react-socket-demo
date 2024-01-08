@@ -1,0 +1,6 @@
+projectKey=INFRA_FRONTEND
+serverUrl=http://localhost:9000
+serverVersion=9.7.1.62043
+dashboardUrl=http://localhost:9000/dashboard?id=INFRA_FRONTEND
+ceTaskId=AYRycGha40BG6hDb4CmJ
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYRycGha40BG6hDb4CmJ

@@ -9,41 +9,28 @@ import {
 export const TestSocket = () => {
   const [count, setCount] = useState();
 
-  // const handleSend = () => {
-  //   console.log("Sending..........");
-  //   socket.emit("greeksheet_client_connected", { msg: "Hi I am React..." });
-  //   console.log("Sent..........");
-  // };
-
-  useEffect(() => {
-    console.log("use Effect ran ");
-    initiateSocket("greeksheet");
-    joinRoom("join", "greeksheet");
-    subscribeToStream("live_count", getGreekData);
-
-    return () => {
-      leaveRoom("leave", "greeksheet");
-    };
-  }, []);
-
-
-
-  const getGreekData = (msg) => {
-    console.log(msg);
+  const cbf = (msg) => {
+    console.log("MSG: ", msg);
     setCount(() => {
       return msg.data;
     });
   };
 
+  useEffect(() => {
+    console.log("use Effect ran ");
+    initiateSocket("chart");
+    joinRoom("join", "chart_room");
+    subscribeToStream("chart_data", cbf);
+
+    return () => {
+      leaveRoom("leave", "chart_room");
+    };
+  }, []);
 
   return (
     <>
       <div>TestSocket</div>
       <div>Count: {count}</div>
-      <button onClick={() => joinRoom("join", "greeksheet")}>Join Room</button>
-      <button onClick={() => leaveRoom("leave", "greeksheet")}>
-        Leave Room
-      </button>
     </>
   );
 };
